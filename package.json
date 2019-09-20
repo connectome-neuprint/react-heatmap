@@ -1,0 +1,33 @@
+{
+  "name": "@connectome-neuprint/react-heatmap",
+  "version": "0.0.1",
+  "description": "React component to use the @connectome-neuprint/heatmap",
+  "main": "index.js",
+  "module": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/connectome-neuprint/react-heatmap.git"
+  },
+  "keywords": [
+    "react",
+    "viz",
+    "heatmap"
+  ],
+  "author": "Jody Clements",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/connectome-neuprint/react-heatmap/issues"
+  },
+  "homepage": "https://github.com/connectome-neuprint/react-heatmap#readme",
+  "devDependencies": {
+    "prop-types": "^15.7.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "peerDependencies": {
+    "react": "^16.9.0"
+  }
+}
