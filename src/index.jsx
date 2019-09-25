@@ -9,8 +9,9 @@ export default class HeatMap extends React.Component {
   }
 
   componentDidMount() {
-    const { data, yLabels, xLabels, height, width } = this.props;
+    const { data, yLabels, xLabels, height, width, onClick } = this.props;
     const heatmap = new HeatMapObject({
+      onClick,
       height: height || this.heatMapRef.current.clientHeight,
       width: width || this.heatMapRef.current.clientWidth,
     });
@@ -18,8 +19,9 @@ export default class HeatMap extends React.Component {
   }
 
   componentDidUpdate() {
-    const { data, yLabels, xLabels, height, width } = this.props;
+    const { data, yLabels, xLabels, height, width, onClick } = this.props;
     const heatmap = new HeatMapObject({
+      onClick,
       height: height || this.heatMapRef.current.clientHeight,
       width: width || this.heatMapRef.current.clientWidth,
     });
@@ -36,12 +38,14 @@ export default class HeatMap extends React.Component {
 HeatMap.defaultProps = {
   height: null,
   width: null,
+  onClick: null
 };
 
 HeatMap.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object).isRequired,
   height: PropTypes.number,
   width: PropTypes.number,
+  onClick: PropTypes.func,
   xLabels: PropTypes.arrayOf(PropTypes.string).isRequired,
   yLabels: PropTypes.arrayOf(PropTypes.string).isRequired
 };
