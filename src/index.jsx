@@ -18,10 +18,10 @@ export default class HeatMap extends React.Component {
   }
 
   componentDidUpdate() {
-    const { data, yLabels, xLabels } = this.props;
+    const { data, yLabels, xLabels, height, width } = this.props;
     const heatmap = new HeatMapObject({
-      height: this.heatMapRef.current.clientHeight,
-      width: this.heatMapRef.current.clientWidth,
+      height: height || this.heatMapRef.current.clientHeight,
+      width: width || this.heatMapRef.current.clientWidth,
     });
     heatmap.setYLabels(yLabels).setXLabels(xLabels).setData(data).render(this.heatMapRef.current);
   }
