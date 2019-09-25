@@ -9,9 +9,11 @@ export default class HeatMap extends React.Component {
   }
 
   componentDidMount() {
-    const { data, yLabels, xLabels, height, width, onClick } = this.props;
+    const { data, yLabels, xLabels, height, width, onClick, onMouseOver, onMouseOut } = this.props;
     const heatmap = new HeatMapObject({
       onClick,
+      onMouseOver,
+      onMouseOut,
       height: height || this.heatMapRef.current.clientHeight,
       width: width || this.heatMapRef.current.clientWidth,
     });
@@ -19,9 +21,11 @@ export default class HeatMap extends React.Component {
   }
 
   componentDidUpdate() {
-    const { data, yLabels, xLabels, height, width, onClick } = this.props;
+    const { data, yLabels, xLabels, height, width, onClick, onMouseOver, onMouseOut } = this.props;
     const heatmap = new HeatMapObject({
       onClick,
+      onMouseOver,
+      onMouseOut,
       height: height || this.heatMapRef.current.clientHeight,
       width: width || this.heatMapRef.current.clientWidth,
     });
@@ -38,7 +42,9 @@ export default class HeatMap extends React.Component {
 HeatMap.defaultProps = {
   height: null,
   width: null,
-  onClick: null
+  onClick: null,
+  onMouseOver: null,
+  onMouseOut: null,
 };
 
 HeatMap.propTypes = {
@@ -46,6 +52,8 @@ HeatMap.propTypes = {
   height: PropTypes.number,
   width: PropTypes.number,
   onClick: PropTypes.func,
+  onMouseOver: PropTypes.func,
+  onMouseOut: PropTypes.func,
   xLabels: PropTypes.arrayOf(PropTypes.string).isRequired,
   yLabels: PropTypes.arrayOf(PropTypes.string).isRequired
 };
