@@ -1,6 +1,6 @@
 {
   "name": "@neuprint/react-heatmap",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "React component to use the @connectome-neuprint/heatmap",
   "main": "lib/index.js",
   "module": "lib/index.js",
