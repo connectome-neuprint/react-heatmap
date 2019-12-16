@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/connectome-neuprint/react-heatmap#readme",
   "dependencies": {
-    "@neuprint/heatmap": "^0.2.1"
+    "@neuprint/heatmap": "^0.3.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.2",
