@@ -38,7 +38,7 @@ export default class HeatMap extends React.Component {
 
   render() {
     return (
-      <div ref={this.heatMapRef} id="heatmap" />
+      <div ref={this.heatMapRef} className="heatmap" />
     );
   }
 }
