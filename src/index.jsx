@@ -9,7 +9,7 @@ export default class HeatMap extends React.Component {
   }
 
   componentDidMount() {
-    const { data, yLabels, xLabels, height, width, onClick, onMouseOver, onMouseOut, maxColor,maxWidthOn } = this.props;
+    const { data, yLabels, xLabels, height, width, onClick, onMouseOver, onMouseOut, maxColor, maxWidthOn, textLabels } = this.props;
     const heatmap = new HeatMapObject({
       onClick,
       onMouseOver,
@@ -17,13 +17,14 @@ export default class HeatMap extends React.Component {
       height: height || this.heatMapRef.current.clientHeight,
       width: width || this.heatMapRef.current.clientWidth,
       maxColor,
-      maxWidthOn
+      maxWidthOn,
+      textLabels
     });
     heatmap.setYLabels(yLabels).setXLabels(xLabels).setData(data).render(this.heatMapRef.current);
   }
 
   componentDidUpdate() {
-    const { data, yLabels, xLabels, height, width, onClick, onMouseOver, onMouseOut, maxColor, maxWidthOn } = this.props;
+    const { data, yLabels, xLabels, height, width, onClick, onMouseOver, onMouseOut, maxColor, maxWidthOn, textLabels } = this.props;
     const heatmap = new HeatMapObject({
       onClick,
       onMouseOver,
@@ -31,7 +32,8 @@ export default class HeatMap extends React.Component {
       height: height || this.heatMapRef.current.clientHeight,
       width: width || this.heatMapRef.current.clientWidth,
       maxColor,
-      maxWidthOn
+      maxWidthOn,
+      textLabels
     });
     heatmap.setYLabels(yLabels).setXLabels(xLabels).setData(data).render(this.heatMapRef.current);
   }
@@ -50,7 +52,8 @@ HeatMap.defaultProps = {
   onMouseOver: null,
   onMouseOut: null,
   maxColor: null,
-  maxWidthOn: true
+  maxWidthOn: true,
+  textLabels: true
 };
 
 HeatMap.propTypes = {
@@ -63,5 +66,6 @@ HeatMap.propTypes = {
   xLabels: PropTypes.arrayOf(PropTypes.string).isRequired,
   yLabels: PropTypes.arrayOf(PropTypes.string).isRequired,
   maxColor: PropTypes.string,
-  maxWidthOn: PropTypes.bool
+  maxWidthOn: PropTypes.bool,
+  textLabels: PropTypes.bool
 };
